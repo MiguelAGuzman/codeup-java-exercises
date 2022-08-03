@@ -6,12 +6,12 @@ public class Bob {
         System.out.println("...");
 
         do {
-            String userInput = scanner.next();
+            String userInput = scanner.nextLine();
             if (userInput.endsWith("?")) {
                 System.out.println("Sure...");
             } else if (userInput.endsWith("!")) {
                 System.out.println("Whoa, chill out!");
-            } else if (userInput.endsWith(" ")) {
+            } else if (userInput.isEmpty()) {
                 System.out.println("Fine. Be that way!");
             } else {
                 System.out.println("Whatever...");
