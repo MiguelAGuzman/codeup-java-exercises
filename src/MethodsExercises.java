@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -101,27 +102,53 @@ public class MethodsExercises {
 //        return integer;
 //    }
 
+//        public static void main(String[] args) {
+//        Scanner diceScan = new Scanner(System.in);
+//
+//        System.out.println("Choose number of sides on your dice.");
+//        int sideNumber = diceScan.nextInt();
+//
+//        Random ranNum = new Random();
+//
+//        int total = 0;
+//        int randomNumber = 0;
+//
+//        for (int i = 0; i < 2; i++) {
+//                randomNumber = ranNum.nextInt(sideNumber) + 1;
+//                total = total + randomNumber;
+//                System.out.println("you rolled " + randomNumber);
+//        }
+//                System.out.println("Total: " + total);
+//                diceScan.close();
+//    }
+
         public static void main(String[] args) {
-        Scanner diceScan = new Scanner(System.in);
+                String a;
+                do {
+                        Scanner diceScan = new Scanner(System.in);
+                        Scanner roll = new Scanner(System.in);
+                        Scanner cont = new Scanner(System.in);
 
-        System.out.println("Choose number of sides on your dice.");
-        int sideNumber = diceScan.nextInt();
+                        System.out.println("Choose number of sides on your dice.");
+                        int sideNumber = diceScan.nextInt();
+                        System.out.println("Enter r to roll dice.");
+                        String r = roll.next();
 
-        Random ranNum = new Random();
+                        if (Objects.equals(r, "r")) {
+                                int dice1 = (int) (Math.random() * sideNumber + 1);
+                                int dice2 = (int) (Math.random() * sideNumber + 1);
+                                int total = dice1 + dice2;
 
-        int total = 0;
-        int randomNumber = 0;
-
-        for (int i = 0; i < 2; i++) {
-                randomNumber = ranNum.nextInt(sideNumber) + 1;
-                total = total +randomNumber;
-                System.out.println("you rolled " + randomNumber);
+                                System.out.println("you rolled: " + dice1);
+                                System.out.println("You rolled: " + dice2);
+                                System.out.println("Total: " + total);
+                        } else {
+                                System.out.println("Not a valid response.");
+                        }
+                        System.out.println("Continue(y/n)");
+                        a = cont.next();
+                } while (Objects.equals(a, "y"));
         }
-                System.out.println("Total: " + total);
-                diceScan.close();
-    }
-
-
 
 }
 

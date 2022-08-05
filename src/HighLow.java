@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class HighLow {
     public static void main(String[] args) {
-        int number = (int)(Math.random()*100);
+        int number = (int)(Math.random() * 100 + 1);
 
         Scanner scanner = new Scanner(System.in);
 
