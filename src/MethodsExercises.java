@@ -119,8 +119,9 @@ public class MethodsExercises {
         }
                 System.out.println("Total: " + total);
                 diceScan.close();
-
     }
+
+
 
 }
 
