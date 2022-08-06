@@ -6,10 +6,10 @@ public class Person {
     }
 
     public void setName(String name) {
-        name = personName;
+        this.name = name;
     }
 
     public void sayHello() {
-
+        System.out.println("Hello " + getName());
     }
 }
