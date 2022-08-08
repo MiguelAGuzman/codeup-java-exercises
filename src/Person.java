@@ -1,6 +1,8 @@
 public class Person {
+    //fields first, private by default
     private String name;
 
+    //constructors(for making objects), public by default
     public String getName() {
         return name;
     }
@@ -17,6 +19,7 @@ public class Person {
         name = newName;
     }
 
+    //accessors
     public static void main(String[] args) {
         Person person1 = new Person("John");
         Person person2 = person1;
