@@ -4,19 +4,19 @@ import java.util.Scanner;
 
 
 public class MethodsExercises {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter two numbers to be added: ");
-        int firstA = scanner.nextInt();
-        int secondA = scanner.nextInt();
-        scanner.close();
-        sum(firstA, secondA);
-    }
-    public static void sum(int fA, int sA) {
-        int s = 0;
-        s = fA + sA;
-        System.out.println("The sum is: " + s);
-    }
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Enter two numbers to be added: ");
+//        int firstA = scanner.nextInt();
+//        int secondA = scanner.nextInt();
+//        scanner.close();
+//        sum(firstA, secondA);
+//    }
+//    public static void sum(int fA, int sA) {
+//        int s = 0;
+//        s = fA + sA;
+//        System.out.println("The sum is: " + s);
+//    }
 //
 //    public static void main(String[] args) {
 //        Scanner scanner = new Scanner(System.in);
@@ -78,9 +78,6 @@ public class MethodsExercises {
 //        Scanner intScan = new Scanner(System.in);
 //
 //        System.out.println("Please enter a number between 1 and 10.");
-//        int userInput =  getInteger(1, 10, intScan.nextInt());
-//        System.out.println(userInput);
-//
 //        getFactorial(getInteger(1, 10, intScan.nextInt()));
 //    }
 //
@@ -95,32 +92,32 @@ public class MethodsExercises {
 //    }
 //
 //    public static int getFactorial(int integer) {
-//        long result = 1;
+//        int result = 1;
 //        for (int f = 1; f <= integer; f++) {
 //            System.out.println(result *= f);
 //        }
 //        return integer;
 //    }
 
-//        public static void main(String[] args) {
-//        Scanner diceScan = new Scanner(System.in);
-//
-//        System.out.println("Choose number of sides on your dice.");
-//        int sideNumber = diceScan.nextInt();
-//
-//        Random ranNum = new Random();
-//
-//        int total = 0;
-//        int randomNumber = 0;
-//
-//        for (int i = 0; i < 2; i++) {
-//                randomNumber = ranNum.nextInt(sideNumber) + 1;
-//                total = total + randomNumber;
-//                System.out.println("you rolled " + randomNumber);
-//        }
-//                System.out.println("Total: " + total);
-//                diceScan.close();
-//    }
+        public static void main(String[] args) {
+        Scanner diceScan = new Scanner(System.in);
+
+        System.out.println("Choose number of sides on your dice.");
+        int sideNumber = diceScan.nextInt();
+
+        Random ranNum = new Random();
+
+        int total = 0;
+        int randomNumber = 0;
+
+        for (int i = 0; i < 2; i++) {
+                randomNumber = ranNum.nextInt(sideNumber) + 1;
+                total = total + randomNumber;
+                System.out.println("you rolled " + randomNumber);
+        }
+                System.out.println("Total: " + total);
+                diceScan.close();
+    }
 
 //        public static void main(String[] args) {
 //                String a;
