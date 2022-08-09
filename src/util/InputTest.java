@@ -1,8 +1,8 @@
 package util;
 
-public class inputTest {
+public class InputTest {
     public static void main(String[] args) {
-        input userI = new input();
+        Input userI = new Input();
 
         System.out.println(userI.getString());
         System.out.println(userI.yesNo());

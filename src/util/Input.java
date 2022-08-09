@@ -2,8 +2,8 @@ package util;
 
 import java.util.Scanner;
 
-public class input {
-    private final Scanner scanner = new Scanner(System.in);
+public class Input {
+    private Scanner scanner = new Scanner(System.in);
 
 
     public String getString() {
@@ -20,7 +20,7 @@ public class input {
     }
 
     public int getInt(int min, int max) {
-        System.out.println("Enter integer between " + min + " and " + max);
+        System.out.println("Enter a number between " + min + " and " + max);
         int userInt = scanner.nextInt();
 
         if (userInt >= min && userInt <= max) {
@@ -32,13 +32,13 @@ public class input {
     }
 
     public int getInt() {
-        System.out.println("get integer");
+        System.out.println("Enter a number: ");
         return scanner.nextInt();
     }
 
     public double getDouble(double min, double max) {
-        System.out.println("Enter integer between " + min + " and " + max);
-        Double userDbl = scanner.nextDouble();
+        System.out.println("Enter a number(decimals ok) between " + min + " and " + max);
+        double userDbl = scanner.nextDouble();
 
         if (userDbl >= min && userDbl <= max) {
             System.out.println("You entered " + userDbl);
@@ -50,7 +50,7 @@ public class input {
     }
 
     public double getDouble() {
-        System.out.println("get double");
+        System.out.println("Enter a number(decimals are ok): ");
         return scanner.nextInt();
     }
 
