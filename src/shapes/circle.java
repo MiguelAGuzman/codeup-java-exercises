@@ -3,12 +3,11 @@ package shapes;
 import java.util.Scanner;
 
 public class circle {
-    private Scanner scanner = new Scanner(System.in);
 
-    private Double radius = scanner.nextDouble();
+    private double radius;
 
     public circle (double radius) {
-        return ;
+        this.radius = radius;
     }
 
     public double getArea() {

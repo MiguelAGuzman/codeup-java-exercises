@@ -4,19 +4,19 @@ import java.util.Scanner;
 
 
 public class MethodsExercises {
-//    public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.print("Enter two numbers to be added: ");
-//        int firstA = scanner.nextInt();
-//        int secondA = scanner.nextInt();
-//        scanner.close();
-//        sum(firstA, secondA);
-//    }
-//    public static void sum(int fA, int sA) {
-//        int s = 0;
-//        s = fA + sA;
-//        System.out.println("The sum is: " + s);
-//    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter two numbers to be added: ");
+        int firstA = scanner.nextInt();
+        int secondA = scanner.nextInt();
+        scanner.close();
+        sum(firstA, secondA);
+    }
+    public static void sum(int fA, int sA) {
+        int s = 0;
+        s = fA + sA;
+        System.out.println("The sum is: " + s);
+    }
 //
 //    public static void main(String[] args) {
 //        Scanner scanner = new Scanner(System.in);
@@ -122,33 +122,33 @@ public class MethodsExercises {
 //                diceScan.close();
 //    }
 
-        public static void main(String[] args) {
-                String a;
-                do {
-                        Scanner diceScan = new Scanner(System.in);
-                        Scanner roll = new Scanner(System.in);
-                        Scanner cont = new Scanner(System.in);
-
-                        System.out.println("Choose number of sides on your dice.");
-                        int sideNumber = diceScan.nextInt();
-                        System.out.println("Enter r to roll dice.");
-                        String r = roll.next();
-
-                        if (Objects.equals(r, "r")) {
-                                int dice1 = (int) (Math.random() * sideNumber + 1);
-                                int dice2 = (int) (Math.random() * sideNumber + 1);
-                                int total = dice1 + dice2;
-
-                                System.out.println("you rolled: " + dice1);
-                                System.out.println("You rolled: " + dice2);
-                                System.out.println("Total: " + total);
-                        } else {
-                                System.out.println("Not a valid response.");
-                        }
-                        System.out.println("Continue(y/n)");
-                        a = cont.next();
-                } while (Objects.equals(a, "y"));
-        }
+//        public static void main(String[] args) {
+//                String a;
+//                do {
+//                        Scanner diceScan = new Scanner(System.in);
+//                        Scanner roll = new Scanner(System.in);
+//                        Scanner cont = new Scanner(System.in);
+//
+//                        System.out.println("Choose number of sides on your dice.");
+//                        int sideNumber = diceScan.nextInt();
+//                        System.out.println("Enter r to roll dice.");
+//                        String r = roll.next();
+//
+//                        if (Objects.equals(r, "r")) {
+//                                int dice1 = (int) (Math.random() * sideNumber + 1);
+//                                int dice2 = (int) (Math.random() * sideNumber + 1);
+//                                int total = dice1 + dice2;
+//
+//                                System.out.println("you rolled: " + dice1);
+//                                System.out.println("You rolled: " + dice2);
+//                                System.out.println("Total: " + total);
+//                        } else {
+//                                System.out.println("Not a valid response.");
+//                        }
+//                        System.out.println("Continue(y/n)");
+//                        a = cont.next();
+//                } while (Objects.equals(a, "y"));
+//        }
 
 }
 

@@ -19,42 +19,46 @@ public class input {
                 userInput.equalsIgnoreCase("yes");
     }
 
-    public void getInt(int min, int max) {
+    public int getInt(int min, int max) {
         System.out.println("Enter integer between " + min + " and " + max);
         int userInt = scanner.nextInt();
 
         if (userInt >= min && userInt <= max) {
             System.out.println("You entered " + userInt);
+            return userInt;
         } else {
-            getInt(min, max);
+            return getInt(min, max);
         }
     }
 
-    public void getInt() {
-        return ;
+    public int getInt() {
+        System.out.println("get integer");
+        return scanner.nextInt();
     }
 
-    public void getDouble(double min, double max) {
+    public double getDouble(double min, double max) {
         System.out.println("Enter integer between " + min + " and " + max);
-        int userDbl = scanner.nextInt();
+        Double userDbl = scanner.nextDouble();
 
         if (userDbl >= min && userDbl <= max) {
             System.out.println("You entered " + userDbl);
+            return userDbl;
         } else {
-            getDouble(min, max);
+            return getDouble(min, max);
         }
 
     }
 
-    public void getDouble() {
-        this.getDouble();
+    public double getDouble() {
+        System.out.println("get double");
+        return scanner.nextInt();
     }
 
-    public static void main(String[] args) {
-        input input = new input();
-        System.out.println(input.getString());
-
-        System.out.println("Continue? (y/n) ");
-        System.out.println(input.yesNo());
-    }
+//    public static void main(String[] args) {
+//        input input = new input();
+//        System.out.println(input.getString());
+//
+//        System.out.println("Continue? (y/n) ");
+//        System.out.println(input.yesNo());
+//    }
 }
