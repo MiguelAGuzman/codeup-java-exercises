@@ -74,50 +74,50 @@ public class MethodsExercises {
 //        System.out.println("The remainder is: " + m);
 //    }
 
-//    public static void main(String[] args) {
-//        Scanner intScan = new Scanner(System.in);
-//
-//        System.out.println("Please enter a number between 1 and 10.");
-//        getFactorial(getInteger(1, 10, intScan.nextInt()));
-//    }
-//
-//    public static int getInteger(int min, int max, int input) {
-//        if (input >= min && input <= max) {
-//            return input;
-//        } else {
-//            Scanner intScan = new Scanner(System.in);
-//            System.out.println("Please enter a number between 1 and 10.");
-//            return getInteger(min, max, intScan.nextInt());
-//        }
-//    }
-//
-//    public static int getFactorial(int integer) {
-//        int result = 1;
-//        for (int f = 1; f <= integer; f++) {
-//            System.out.println(result *= f);
-//        }
-//        return integer;
-//    }
+    public static void main(String[] args) {
+        Scanner intScan = new Scanner(System.in);
 
-        public static void main(String[] args) {
-        Scanner diceScan = new Scanner(System.in);
-
-        System.out.println("Choose number of sides on your dice.");
-        int sideNumber = diceScan.nextInt();
-
-        Random ranNum = new Random();
-
-        int total = 0;
-        int randomNumber = 0;
-
-        for (int i = 0; i < 2; i++) {
-                randomNumber = ranNum.nextInt(sideNumber) + 1;
-                total = total + randomNumber;
-                System.out.println("you rolled " + randomNumber);
-        }
-                System.out.println("Total: " + total);
-                diceScan.close();
+        System.out.println("Please enter a number between 1 and 10.");
+        getFactorial(getInteger(1, 10, intScan.nextInt()));
     }
+
+    public static int getInteger(int min, int max, int input) {
+        if (input >= min && input <= max) {
+            return input;
+        } else {
+            Scanner intScan = new Scanner(System.in);
+            System.out.println("Please enter a number between 1 and 10.");
+            return getInteger(min, max, intScan.nextInt());
+        }
+    }
+
+    public static int getFactorial(int integer) {
+        int result = 1;
+        for (int f = 1; f <= integer; f++) {
+            System.out.println(result *= f);
+        }
+        return integer;
+    }
+
+//        public static void main(String[] args) {
+//        Scanner diceScan = new Scanner(System.in);
+//
+//        System.out.println("Choose number of sides on your dice.");
+//        int sideNumber = diceScan.nextInt();
+//
+//        Random ranNum = new Random();
+//
+//        int total = 0;
+//        int randomNumber = 0;
+//
+//        for (int i = 0; i < 2; i++) {
+//                randomNumber = ranNum.nextInt(sideNumber) + 1;
+//                total = total + randomNumber;
+//                System.out.println("you rolled " + randomNumber);
+//        }
+//                System.out.println("Total: " + total);
+//                diceScan.close();
+//    }
 
 //        public static void main(String[] args) {
 //                String a;
