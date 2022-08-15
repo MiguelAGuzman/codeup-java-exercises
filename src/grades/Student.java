@@ -12,11 +12,11 @@ public class Student {
     }
 
     public String getName() {
-        return "Grade average for " + name;
+        return this.name;
     }
 
     public void addGrade(int grade) {
-        this.grades.add(grade);
+        grades.add(grade);
     }
 
     public double getGradeAverage() {

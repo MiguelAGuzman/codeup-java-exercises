@@ -8,6 +8,7 @@ public class StudentTest {
         bob.addGrade(80);
         bob.addGrade(90);
 
+        System.out.println();
         System.out.println(bob.getName());
         System.out.println(bob.getGradeAverage());
     }
