@@ -42,7 +42,8 @@ public class GradesApplication {
                 System.out.println(key);
             }
 
-            System.out.println("Please select student for grades:");
+            System.out.println("Please enter student's git username for " +
+                    "grades or enter \"list\" to view grades for all students:");
             String studentGrades = studentScan.nextLine();
             switch (studentGrades) {
                 case "bobgit" -> {
@@ -64,6 +65,12 @@ public class GradesApplication {
                     System.out.println(john.getName());
                     System.out.println(john);
                     System.out.println("Average: " + john.getGradeAverage());
+                }
+                case "list" -> {
+                    System.out.println(bob);
+                    System.out.println(mike);
+                    System.out.println(mark);
+                    System.out.println(john);
                 }
                 default -> System.out.println("Sorry, no student with that github name?");
             }
