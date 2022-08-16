@@ -21,7 +21,7 @@ public class MoviesApplication {
         while(choice != EXIT_CHOICE) {
             printMenu();
 
-            choice = input.getInt(0, 5);
+            choice = input.getInt(0, 5, "Enter 0 through 5: ");
 
             doChoice(choice);
         }

@@ -17,7 +17,13 @@ public class Input {
     }
 
     public int getInt() {
-        return scanner.nextInt();
+        try {
+            return Integer.valueOf(getString());
+        } catch (NumberFormatException e) {
+            System.out.println("Input is not a valid integer.");
+            System.out.println("Enter an integer: ");
+            return getInt();
+        }
     }
 
     public int getInt(int min, int max, String prompt) {
@@ -32,7 +38,13 @@ public class Input {
     }
 
     public double getDouble() {
-        return scanner.nextDouble();
+        try {
+            return Double.valueOf(getString());
+        } catch (NumberFormatException e) {
+            System.out.println("Input is not a valid double.");
+            System.out.println("Enter an double: ");
+            return getDouble();
+        }
     }
 
     public double getDouble(double min, double max) {

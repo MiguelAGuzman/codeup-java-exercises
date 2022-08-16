@@ -11,7 +11,7 @@ public class GroceryListApplication {
     private static Input input = new Input();
 
     public static void main(String[] args) {
-        if(!input.yesNo("Would you like to create a grocery list? (y/n) ")) {
+        if(input.yesNo("Would you like to create a grocery list? (y/n) ") == false) {
             System.out.println("Bye");
             return;
         }
@@ -39,7 +39,7 @@ public class GroceryListApplication {
             GroceryItem item = new GroceryItem(itemName, categoryNum, itemQty);
             groceries.add(item);
 
-            if(!input.yesNo("Would you like to add another grocery item? (y/n)")) {
+            if(input.yesNo("Would you like to add another grocery item? (y/n) ") == false) {
                 return groceries;
             }
         }
@@ -63,7 +63,7 @@ public class GroceryListApplication {
                 categoryItems.add(groceryItem);
             }
         }
-        Collection.sort(categoryItems);
+//        Collection.sort(categoryItems);
 
         if(category == PRODUCE) {
             System.out.println("PRODUCE:");
