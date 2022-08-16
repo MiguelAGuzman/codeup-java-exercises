@@ -1,8 +1,6 @@
 package grocery;
 
-import util.Input;
-
-public class GroceryItem {
+public class GroceryItem implements Comparable {
     private String name;
     private int categoryNum;
     private int quantity;
@@ -13,9 +11,13 @@ public class GroceryItem {
         this.quantity = quantity;
     }
 
-    public int compareTo(Object o) {
-        GroceryItem otherItem = (GroceryItem) o;
-        return  this.getName().compareTo(otherItem)
+    @Override
+    public String toString() {
+        return "GroceryItem{" +
+                "name='" + name + '\'' +
+                ", categoryNum=" + categoryNum +
+                ", quantity=" + quantity +
+                '}';
     }
 
     public String getName() {
@@ -41,4 +43,10 @@ public class GroceryItem {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+    @Override
+    public int compareTo(Object o) {
+        GroceryItem otherItem = (GroceryItem) o;
+        return this.getName().compareTo(otherItem.getName());
+    }
+
 }

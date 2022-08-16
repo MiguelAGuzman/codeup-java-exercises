@@ -10,45 +10,39 @@ public class Input {
         return scanner.nextLine();
     }
 
-    public boolean yesNo() {
+    public boolean yesNo(String c) {
         String userInput = getString();
 
-        return userInput.equalsIgnoreCase("y") ||
-                userInput.equalsIgnoreCase("yes");
-    }
-
-    public int getInt(int min, int max) {
-        System.out.println("Enter a number between " + min + " and " + max);
-        int userInt = scanner.nextInt();
-
-        if (userInt < min || userInt > max) {
-            System.out.println("Int is not between " + min + " and " + max);
-            userInt = getInt(min, max);
-        }
-            return userInt;
-
+        return userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes");
     }
 
     public int getInt() {
-        System.out.println("Enter a number: ");
         return scanner.nextInt();
     }
 
-    public double getDouble(double min, double max) {
-        System.out.println("Enter a number(decimals ok) between " + min + " and " + max);
-        double userDbl = getDouble();
+    public int getInt(int min, int max, String prompt) {
+        System.out.print(prompt);
+        int userInt = getInt();
 
-        if (userDbl < min && userDbl > max) {
+        if (userInt < min || userInt > max) {
             System.out.println("Int is not between " + min + " and " + max);
-            userDbl = getDouble(min, max);
+            userInt = getInt(min, max, prompt);
         }
-            return userDbl;
-
-
+        return userInt;
     }
 
     public double getDouble() {
         return scanner.nextDouble();
+    }
+
+    public double getDouble(double min, double max) {
+        double userDouble = getDouble();
+
+        if (userDouble < min || userDouble > max) {
+            System.out.println("Double is not between " + min + " and " + max + ". Enter another double: ");
+            userDouble = getDouble(min, max);
+        }
+            return userDouble;
     }
 
 }
