@@ -18,12 +18,12 @@ public class Input {
 
     public int getInt() {
         try {
-            return Integer.valueOf(getString());
+            return Integer.parseInt(getString());
         } catch (NumberFormatException e) {
             System.out.println("Input is not a valid integer.");
             System.out.println("Enter an integer: ");
-            return getInt();
         }
+        return getInt();
     }
 
     public int getInt(int min, int max, String prompt) {
@@ -39,12 +39,12 @@ public class Input {
 
     public double getDouble() {
         try {
-            return Double.valueOf(getString());
+            return Double.parseDouble(getString());
         } catch (NumberFormatException e) {
             System.out.println("Input is not a valid double.");
             System.out.println("Enter an double: ");
-            return getDouble();
         }
+        return getDouble();
     }
 
     public double getDouble(double min, double max) {
@@ -57,9 +57,31 @@ public class Input {
             return userDouble;
     }
 
-    Enter a binary number: 111
-    Your number is 7
+    public int getBinary() {
+        try {
+            System.out.println("Enter int:");
 
-    Enter a hexidecimal number: 10
-    Your number is 16
+            return Integer.parseInt(getString());
+        } catch (NumberFormatException e) {
+            System.out.println("Input is not a valid integer.");
+            System.out.println("Enter an integer: ");
+            return getBinary();
+        }
+    }
+
+    public int getHex() {
+        try {
+            return Integer.parseInt(getString());
+        } catch (NumberFormatException e) {
+            System.out.println("Input is not a valid integer.");
+            System.out.println("Enter an integer: ");
+            return getHex();
+        }
+    }
+
+//    Enter a binary number: 111
+//    Your number is 7
+//
+//    Enter a hexidecimal number: 10
+//    Your number is 16
 }
