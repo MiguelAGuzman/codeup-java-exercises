@@ -57,11 +57,10 @@ public class Input {
             return userDouble;
     }
 
-    public int getBinary() {
+    public String getBinary() {
         try {
-            System.out.println("Enter int:");
-
-            return Integer.parseInt(getString());
+            System.out.println("Enter integer to convert to binary: ");
+            return Integer.toBinaryString(getInt());
         } catch (NumberFormatException e) {
             System.out.println("Input is not a valid integer.");
             System.out.println("Enter an integer: ");
@@ -69,9 +68,10 @@ public class Input {
         }
     }
 
-    public int getHex() {
+    public String getHex() {
         try {
-            return Integer.parseInt(getString());
+            System.out.println("Enter integer to convert to hexidecimal: ");
+            return Integer.toHexString(getInt());
         } catch (NumberFormatException e) {
             System.out.println("Input is not a valid integer.");
             System.out.println("Enter an integer: ");
@@ -79,9 +79,4 @@ public class Input {
         }
     }
 
-//    Enter a binary number: 111
-//    Your number is 7
-//
-//    Enter a hexidecimal number: 10
-//    Your number is 16
 }
