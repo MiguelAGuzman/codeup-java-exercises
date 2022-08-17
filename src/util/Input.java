@@ -57,4 +57,9 @@ public class Input {
             return userDouble;
     }
 
+    Enter a binary number: 111
+    Your number is 7
+
+    Enter a hexidecimal number: 10
+    Your number is 16
 }
