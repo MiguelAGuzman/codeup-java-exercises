@@ -1,52 +1,40 @@
 package grocery;
 
-public class GroceryItem implements Comparable {
-    private String name;
-    private int categoryNum;
-    private int quantity;
+import java.io.Serializable;
 
-    public GroceryItem(String name, int categoryNum, int quantity) {
-        this.name = name;
-        this.categoryNum = categoryNum;
-        this.quantity = quantity;
-    }
+public class GroceryItem {
+        private String name;
+        private int quantity;
 
-    @Override
-    public String toString() {
-        return "GroceryItem{" +
-                "name='" + name + '\'' +
-                ", categoryNum=" + categoryNum +
-                ", quantity=" + quantity +
-                '}';
-    }
+        public GroceryItem(String name, int quantity) {
+            this.name = name;
+            this.quantity = quantity;
+        }
 
-    public String getName() {
-        return name;
-    }
+        public static GroceryItem createFromString(String itemString) {
+            String [] parts = itemString.split(":");
+            return new GroceryItem(parts[0].trim(), Integer.parseInt(parts[1].trim()));
+        }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        @Override
+        public String toString() {
+            return name + " : " + quantity;
+        }
 
-    public int getCategoryNum() {
-        return categoryNum;
-    }
+        public String getName() {
+            return name;
+        }
 
-    public void setCategoryNum(int categoryNum) {
-        this.categoryNum = categoryNum;
-    }
+        public void setName(String name) {
+            this.name = name;
+        }
 
-    public int getQuantity() {
-        return quantity;
-    }
+        public int getQuantity() {
+            return quantity;
+        }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-    @Override
-    public int compareTo(Object o) {
-        GroceryItem otherItem = (GroceryItem) o;
-        return this.getName().compareTo(otherItem.getName());
-    }
+        public void setQuantity(int quantity) {
+            this.quantity = quantity;
+        }
 
 }
