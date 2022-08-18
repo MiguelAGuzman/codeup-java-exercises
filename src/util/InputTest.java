@@ -10,5 +10,6 @@ public class InputTest {
 //        System.out.println(input.getDouble(1, 20));
 //        System.out.println(input.getBinary());
 //        System.out.println(input.getHex());
+
     }
 }
