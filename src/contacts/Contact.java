@@ -1,7 +1,5 @@
 package contacts;
 
-import java.util.Scanner;
-
 public class Contact {
     private String name, number;
 

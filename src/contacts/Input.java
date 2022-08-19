@@ -34,7 +34,6 @@ public class Input {
     public boolean yesNo(String prompt) {
         System.out.print(prompt);
         char response = scanner.nextLine().trim().toLowerCase().charAt(0);
-//        if (Character.compare(response,'y') == 0) {
         if (response == 'y') {
             return true;
         } else if (response == 'n') {
@@ -58,9 +57,8 @@ public class Input {
         String input = scanner.nextLine().trim();
         int i;
 
-        try {                                    //validation try/catch.
+        try {
             i = Integer.parseInt(input.trim());
-//            i = Integer.valueOf(input);
         } catch (NumberFormatException nfe) {
             System.out.println("Invalid format...");
             return getInt(x, y, prompt);
@@ -165,44 +163,4 @@ public class Input {
         }
     }
 
-    public String intToBin() {
-        return intToBin("Enter an integer to convert to binary: ");
-    }
-
-    public String intToBin(String prompt) {
-        int input = getInt(prompt);
-
-        try {
-            return Integer.toBinaryString(input);
-        } catch (Exception e) {
-            System.out.println("There was an exception...");
-            return intToHex(prompt);
-        }
-    }
-
-    public String intToHex() {
-        return intToHex("Enter an integer to convert to hexadecimal: ");
-    }
-
-    public String intToHex(String prompt) {
-        int input = getInt(prompt);
-
-        try {
-            return Integer.toHexString(input);
-        } catch (Exception e) {
-            System.out.println("There was an exception...");
-            return intToHex(prompt);
-        }
-    }
-
-    public boolean addCheck(int[] arr, int k) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] + arr[j] == k) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
 }
