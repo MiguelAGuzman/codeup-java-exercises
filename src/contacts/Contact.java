@@ -1,16 +1,14 @@
 package contacts;
 
-public class Contact {
-    private String name;
-    private String phoneNumber;
+import java.util.Scanner;
 
-    public Contact(String name, String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+public class Contact {
+    private String name, number;
+
+
+    public Contact(String name, String number) {
         this.name = name;
-    }
-    public static Contact createFromString(String contactString) {
-        String [] parts = contactString.split("|");
-        return new Contact(parts[0].trim(), parts[1].trim());
+        this.number = number;
     }
 
     public String getName() {
@@ -21,16 +19,11 @@ public class Contact {
         this.name = name;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getNumber() {
+        return number;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    @Override
-    public String toString() {
-        return name + "|" + phoneNumber;
+    public void setNumber(String number) {
+        this.number = number;
     }
 }
