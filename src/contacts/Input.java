@@ -3,163 +3,79 @@ package contacts;
 import java.util.Scanner;
 
 public class Input {
+    private Scanner scanner = new Scanner(System.in);
 
-    //init scanner
-    private static Scanner scanner;
 
-    //scanner constructor
-    public Input() {
-        if (scanner == null) {
-            scanner = new Scanner(System.in);
-        }
-    }
-
-    //getString method w/ default prompt. returns input string.
     public String getString() {
-        return getString("Please type a sentence: ");
-    }
-
-    //getString method w/ custom prompt. returns input string.
-    public String getString(String prompt) {
-        System.out.print(prompt);
         return scanner.nextLine();
     }
 
-    //yesNo method w/ default prompt. returns boolean T/F for Y/N.
-    public boolean yesNo() {
-        return yesNo("(y/n): ");
+    public boolean yesNo(String c) {
+        String userInput = getString();
+
+        return userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes");
     }
 
-    //yesNo method w/ custom prompt. returns boolean T/F for Y/N.
-    public boolean yesNo(String prompt) {
-        System.out.print(prompt);
-        char response = scanner.nextLine().trim().toLowerCase().charAt(0);
-        if (response == 'y') {
-            return true;
-        } else if (response == 'n') {
-            return false;
-        } else {
-            System.out.println("Please enter yes or no.");
-            return yesNo(prompt);
-        }
-    }
-
-    //getInt method w/ default prompt. returns input int between min & max.
-    public int getInt(int x, int y) {
-
-        return getInt(x, y, String.format("Please enter a number between %d and %d: ", x, y));
-
-    }
-
-    //getInt method w/ custom prompt. returns input int between min & max.
-    public int getInt(int x, int y, String prompt) {
-        System.out.print(prompt);
-        String input = scanner.nextLine().trim();
-        int i;
-
-        try {
-            i = Integer.parseInt(input.trim());
-        } catch (NumberFormatException nfe) {
-            System.out.println("Invalid format...");
-            return getInt(x, y, prompt);
-        }
-
-        if (i < x || i > y) {
-            System.out.println("Number out of range.");
-            return getInt(x, y, prompt);
-        }
-        return i;
-    }
-
-    //getInt method w/ default prompt. returns input int.
     public int getInt() {
-        return getInt("Please enter an integer: ");
-    }
-
-
-    //getInt method w/ custom prompt. returns input int.
-    public int getInt(String prompt) {
-        System.out.print(prompt);
-        String input = scanner.nextLine();
-
         try {
-            return Integer.parseInt(input.trim());
-        } catch (Exception e) {
-            System.out.println("Invalid format...");
-            return getInt(prompt);
-        }
-    }
-
-    //getDouble method w/ default prompt. returns input double between min & max.
-    public double getDouble(double x, double y) {
-        return getDouble(x, y, String.format("Please enter a number between %f and %f: ", x, y));
-    }
-
-    //getDouble method w/ custom prompt. returns input double between min & max.
-    public double getDouble(double x, double y, String prompt) {
-        System.out.print(prompt);
-        String input = scanner.nextLine();
-        double d;
-
-        try {
-            d = Double.parseDouble(input.trim());
+            return Integer.parseInt(getString());
         } catch (NumberFormatException e) {
-            System.out.println("Invalid format...");
-            return getDouble(x, y, prompt);
+            System.out.println("Input is not a valid integer.");
+            System.out.println("Enter an integer: ");
         }
-
-        if (d < x || d > y) {
-            System.out.println("Number out of range.");
-            return getDouble(x, y);
-        }
-        return d;
+        return getInt();
     }
 
-    //getDouble method w/ default prompt. returns input double.
-    public double getDouble() {
-        return getDouble("Please an decimal number: ");
-    }
-
-    //getDouble method w/ custom prompt. returns input double.
-    public double getDouble(String prompt) {
+    public int getInt(int min, int max, String prompt) {
         System.out.print(prompt);
-        String input = scanner.nextLine();
+        int userInt = getInt();
 
+        if (userInt < min || userInt > max) {
+            System.out.println("Int is not between " + min + " and " + max);
+            userInt = getInt(min, max, prompt);
+        }
+        return userInt;
+    }
+
+    public double getDouble() {
         try {
-            return Double.parseDouble(input.trim());
-        } catch (NumberFormatException nfe) {
-            System.out.println("Invalid format...");
-            return getDouble(prompt);
+            return Double.parseDouble(getString());
+        } catch (NumberFormatException e) {
+            System.out.println("Input is not a valid double.");
+            System.out.println("Enter an double: ");
+        }
+        return getDouble();
+    }
+
+    public double getDouble(double min, double max) {
+        double userDouble = getDouble();
+
+        if (userDouble < min || userDouble > max) {
+            System.out.println("Double is not between " + min + " and " + max + ". Enter another double: ");
+            userDouble = getDouble(min, max);
+        }
+            return userDouble;
+    }
+
+    public String getBinary() {
+        try {
+            System.out.println("Enter integer to convert to binary: ");
+            return Integer.toBinaryString(getInt());
+        } catch (NumberFormatException e) {
+            System.out.println("Input is not a valid integer.");
+            System.out.println("Enter an integer: ");
+            return getBinary();
         }
     }
 
-    public Integer getBinary() {
-        return getBinary("Enter a binary number: ");
-    }
-
-    public Integer getBinary(String prompt) {
-        String input = getString(prompt);
-
+    public String getHex() {
         try {
-            return Integer.valueOf(input, 2);
-        } catch (Exception e) {
-            System.out.println("There was an exception...");
-            return getBinary(prompt);
-        }
-    }
-
-    public Integer getHex() {
-        return getHex("Enter a Hexadecimal number: ");
-    }
-
-    public Integer getHex(String prompt) {
-        String input = getString(prompt);
-
-        try {
-            return Integer.valueOf(input, 16);
-        } catch (Exception e) {
-            System.out.println("There was an exception...");
-            return getHex(prompt);
+            System.out.println("Enter integer to convert to hexidecimal: ");
+            return Integer.toHexString(getInt());
+        } catch (NumberFormatException e) {
+            System.out.println("Input is not a valid integer.");
+            System.out.println("Enter an integer: ");
+            return getHex();
         }
     }
 
